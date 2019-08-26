@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/layui.css">
+    <script src="js/layui.js"></script>
+    <style>
+        body {
+            background-color: #1e9fff;
+        }
+        .container {
+            width: 500px;
+            margin: 270px auto 0px;
+        }
+        .login {
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 5px 5px 20px #4444;
+            padding: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="login">
+        <form class="layui-form">
+            <div class="layui-form-item" style="color: gray">
+                <h2>现代软件工作室--后台管理系统</h2>
+            </div>
+            <hr>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input type="text" placeholder="请输入用户名" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-block">
+                    <input type="text" placeholder="请输入密码" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">验证码</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input">
+                </div>
+                <img src="static/images/yz.png">
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

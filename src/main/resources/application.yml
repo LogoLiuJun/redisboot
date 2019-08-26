@@ -1,0 +1,56 @@
+spring:
+  mvc:           # 设置静态文件路径，js,css等
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/,classpath:/META-NF/resources/,classpath:/resources/,classpath:/public/,classpath:/upload
+  thymeleaf:
+    encoding: UTF-8
+    #开发时关闭缓存,不然没法看到实时页面(要重启)
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/school?serverTimezone=GMT
+    username: root
+    password: root
+    #jackson
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  # Redis数据库
+  redis:
+    database: 0
+    #host: 192.168.137.129
+    #port: 6379
+    password: redis123456root
+    timeout: 6000
+    lettuce:
+      pool:
+        max-active: -1
+        max-wait: -1s
+        max-idle: 50
+        min-idle: 10
+    custer:
+      nodes:
+        - 192.168.137.129:6379
+        - 192.168.137.129:6380
+        - 192.168.137.129:6381
+    sentinel:
+      master: mymaster
+      nodes: 192.168.137.129:26379
+
+
+#整合mybatis
+mybatis:
+  #config-location: mybatis-config.xml 如果保留了这个配置文件可以这样配置
+  type-aliases-package: com.cssl.redis.entity
+  #mapper-locations: classpath:com/cssl/mapper/*.xml 也可以用注解扫描接口
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
